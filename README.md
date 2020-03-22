@@ -1,6 +1,6 @@
 # Italy-Covid-19-Cases
 
-Visualization of Covid-19 Cases in Italy with the data coming from [Civil Defense](http://www.salute.gov.it/nuovocoronavirus). 
+Visualization of Covid-19 Cases in Italy with the data coming from [Civil Defense](http://www.salute.gov.it/nuovocoronavirus). Civil defense provides pdfs. Convertion to xlsx is done [here](https://document.online-convert.com/convert/pdf-to-xlsx).
 
 required packages: [pandas](https://pypi.org/project/pandas/), [numpy](https://pypi.org/project/numpy/),
 [matplotlib](https://pypi.org/project/matplotlib/),[glob](https://pypi.org/project/glob3/),os,re,pylab,sys,[datetime](https://pypi.org/project/datetime3/)
