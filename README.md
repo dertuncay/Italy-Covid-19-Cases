@@ -9,10 +9,11 @@ required packages: [pandas](https://pypi.org/project/pandas/), [numpy](https://p
 ## Usage
 
 general.py
+-----------------------------------------------------
 
 #### Inputs: 
 general - Plot given variables in national level
-state - plot given variables for given state(s)
+state - Plot given variables for given state(s)
 
 'Hospitalized with symptoms','Intensive care','Home isolation','Total positive','Recovered','Death toll','Total cases','Tested' are the input
 variables for both general and state. 'all' can be used as a wild card.
@@ -46,5 +47,39 @@ variables for both general and state. 'all' can be used as a wild card.
 
 Multiple states can be given with comma (,) in between
 
-<pre>python general.py state a'Intensive care' all</pre>
+<pre>python general.py state 'Intensive care' all</pre>
 
+activecases.py
+-----------------------------------------------------
+
+#### Inputs: 
+city - Plot given variables for given city(ies)
+state - Plot given variables for given state(s)
+
+'all' can be used as a wild card in state level plot. It creates a mess in city level plots so it is disabled for cities.
+
+'LOMBARDIA' 'EMILIA-ROMAGNA' 'VENETO' 'MARCHE' 'PIEMONTE' 'TOSCANA'
+ 'CAMPANIA' 'LAZIO' 'LIGURIA' 'FRIULI VENEZIA GIULIA' 'SICILIA'
+ 'PUGLIA' 'UMBRIA' 'ABRUZZO' 'MOLISE' 'TRENTINO ALTO ADIGE'
+ 'SARDEGNA' 'BASILICATA' u"VALLE D'AOSTA" 'CALABRIA'
+are the states in Italy.
+
+
+##### City Example: 
+
+<pre>python activecases.py city 'Trieste','Udine' </pre>
+
+<pre>python activecases.py city Milano </pre>
+
+(one word inputs can be written without quotes)
+
+
+#### State Example:
+
+<pre>python activecases.py state 'Lombardia'</pre>
+
+<pre>python activecases.py state 'Lombardia','Veneto'</pre>
+
+Multiple states can be given with comma (,) in between
+
+<pre>python general.py state all</pre>
