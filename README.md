@@ -61,7 +61,7 @@ state - Plot given variables for given state(s)
 'LOMBARDIA' 'EMILIA-ROMAGNA' 'VENETO' 'MARCHE' 'PIEMONTE' 'TOSCANA'
  'CAMPANIA' 'LAZIO' 'LIGURIA' 'FRIULI VENEZIA GIULIA' 'SICILIA'
  'PUGLIA' 'UMBRIA' 'ABRUZZO' 'MOLISE' 'TRENTINO ALTO ADIGE'
- 'SARDEGNA' 'BASILICATA' u"VALLE D'AOSTA" 'CALABRIA'
+ 'SARDEGNA' 'BASILICATA' "VALLE D'AOSTA" 'CALABRIA'
 are the states in Italy.
 
 
@@ -82,4 +82,4 @@ are the states in Italy.
 
 Multiple states can be given with comma (,) in between
 
-<pre>python general.py state all</pre>
+<pre>python activecases.py state all</pre>
