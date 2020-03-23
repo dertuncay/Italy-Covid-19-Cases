@@ -75,7 +75,9 @@ if  sys.argv[1:][0] == 'city':
 	if any(elem not in cities['City'].str.upper().tolist() for elem in city_names) == True:
 		raise TypeError('One or few of the given city(ies) are not in Italy')
 
-
+# Remove State names from City names
+for state in states.State.unique():
+	cities = cities[cities['City']!=state]
 
 ## Grand total
 # # gca stands for 'get current axis'
