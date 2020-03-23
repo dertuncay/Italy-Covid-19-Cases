@@ -110,7 +110,7 @@ regionplot.py
 -----------------------------------------------------
 
 #### Inputs: 
-Input date format: YYYY/MM/DD
+Input date format: DD/MM/YYYY
 'Hospitalized with symptoms','Intensive care','Home isolation','Total positive','Recovered','Death toll','Total cases','Tested' are the input variables. 
 Example:
-<pre>python regionplot.py 2020/03/21 'Recovered'</pre>
+<pre>python regionplot.py 18/03/2020 'Recovered'</pre>
