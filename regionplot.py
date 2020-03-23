@@ -1,4 +1,4 @@
-import json, itertools, re, sys
+import json, itertools, re, sys, glob
 import numpy as np
 import pandas as pd
 import matplotlib as mpl
@@ -23,16 +23,29 @@ def reg_fix(name):
 
 pars = ['Hospitalized with symptoms','Intensive care','Home isolation','Total positive','Recovered','Death toll','Total cases','Tested']
 pars = [x.upper() for x in pars]
-if sys.argv[1:][0].upper() in pars == False:
+if sys.argv[1:][1].upper() in pars == False:
 	raise TypeError('This measure is not provided by Italian Civil Defense')
+par = sys.argv[1:][1].upper()
 
-par = sys.argv[1:][0].upper()
+date_info = pd.DataFrame()
+xlsxs = glob.glob('general/*.xlsx')
+for xlsx in xlsxs:
+	data = pd.read_excel(xlsx, header=None,skiprows=1, encoding='utf-8')
+	# Get Date
+	match = re.search(r'\d{2}/\d{2}/\d{4}', data[1].iloc[0])
+	date = datetime.strptime(match.group(), '%d/%m/%Y').date()
+	date_info = date_info.append({'Path': xlsx,'Date'.upper():date}, ignore_index=True)
+
+given_date = datetime.strptime(sys.argv[1:][0], '%d/%m/%Y').date()
+indx = date_info[date_info['DATE'] == given_date].index
+if len(indx) == 0:
+	raise TypeError('Check your given date! It must be dd/mm/YYYY format')
 
 # Load json file
 with open('italy_map/regioni.json') as json_file:
     json_data = json.load(json_file) # or geojson.load(json_file)
 # Load xlsx file
-data = pd.read_excel('general/C_17_pagineAree_5351_28_file.xlsx', header=None,skiprows=1, encoding='utf-8')
+data = pd.read_excel(date_info['Path'][indx[0]], header=None,skiprows=1, encoding='utf-8')
 # Get Date
 match = re.search(r'\d{2}/\d{2}/\d{4}', data[1].iloc[0])
 date = datetime.strptime(match.group(), '%d/%m/%Y').date()
