@@ -105,3 +105,12 @@ are the states in Italy.
 Multiple states can be given with comma (,) in between
 
 <pre>python activecases.py state all</pre>
+
+regionplot.py
+-----------------------------------------------------
+
+#### Inputs: 
+Input date format: YYYY/MM/DD
+'Hospitalized with symptoms','Intensive care','Home isolation','Total positive','Recovered','Death toll','Total cases','Tested' are the input variables. 
+Example:
+<pre>python regionplot.py 2020/03/21 'Recovered'</pre>
