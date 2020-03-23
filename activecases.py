@@ -30,7 +30,7 @@ for xlsx in xlsxs:
 	data = data[data.iloc[:, 0].notna()]
 	# Remove non-city rows
 	noncities = ['in fase di verifica e aggiornamento','In aggiornamento','Friuli in aggiornamento','Altro/In fase di aggiornamento','Da aggiornare','in fase di aggiornamento',
-	'altro/in fase di aggiornamento','altro/in fase di verifica','altro in fase di aggiornamento']
+	'altro/in fase di aggiornamento','altro/in fase di verifica','altro in fase di aggiornamento','Lazio in aggiornamento','Lazio fuori egione']
 	data = data[~data.iloc[:, 0].isin(noncities)]
 
 	# Date info
